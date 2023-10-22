@@ -1,3 +1,5 @@
 *.toml
 testing.py
 .streamlit/
+chatbot/
+__pycache__/

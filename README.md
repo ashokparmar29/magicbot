@@ -5,5 +5,7 @@
 * Add the following to the file.
 
 openai_key = "<your-openai-key>"
+
 weaviate_key = "<your-weavaite-key>"
+
 weaviate_url = "<url-weaviate>"
