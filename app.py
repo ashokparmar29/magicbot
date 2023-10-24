@@ -72,7 +72,7 @@ MagicBot is designed to retrieve relevant documents from a database based on use
 1. User asks a question.
 2. MagicBot retrieves the most relevant document from the database based on the question.
 3. MagicBot uses the retrieved document as the context for the conversation.
-4. MagicBot generates a response based on the given context and provides it to the user. If the MagicBot do not have any relevant information, reply 
+4. MagicBot generates a response based on the given context and provides it to the user. If the MagicBot do not have any relevant information in the context, reply "No relevent information available".
 5. User may ask follow-up questions or provide further context.
 6. MagicBot retrieves new relevant documents based on the follow-up questions or context.
 7. MagicBot continues the conversation based on the new context.
