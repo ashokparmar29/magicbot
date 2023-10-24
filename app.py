@@ -9,9 +9,10 @@ from connection import WeaviateConnection
 
 st.set_page_config(page_title="Creators' Game Chatbot", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Chat with me to know anything about Creators' game 💬🦙")
+st.title("Chat with me to know anything about Creators' game 💬")
 st.info("info...", icon="📃")
-weaviate_url = st.secrets.weaviate_url#'https://creatorsgame-p4zphcru.weaviate.network'
+weaviate_url = 'https://creatorsgame-p4zphcru.weaviate.network'
+#weaviate_url = st.secrets.weaviate_url#'https://creatorsgame-p4zphcru.weaviate.network'
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
         {"role": "assistant", "content": "Ask me a question about Creators' Game!"}
