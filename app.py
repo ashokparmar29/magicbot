@@ -7,12 +7,11 @@ import weaviate
 from llama_index.vector_stores import WeaviateVectorStore
 from connection import WeaviateConnection
 
-st.set_page_config(page_title="Creators' Game Chatbot", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Creators' Game Chatbot", page_icon="🎲" , layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Chat with me to know anything about Creators' game 💬")
-st.info("info...", icon="📃")
-weaviate_url = 'https://creatorsgame-p4zphcru.weaviate.network'
-#weaviate_url = st.secrets.weaviate_url#'https://creatorsgame-p4zphcru.weaviate.network'
+st.title("Chat with me to know anything about Creators' game 🎲")
+st.info(" ", icon="📃")
+weaviate_url = st.secrets.weaviate_url
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
         {"role": "assistant", "content": "Ask me a question about Creators' Game!"}
@@ -27,7 +26,6 @@ def load_data():
         "weaviate",
         type=WeaviateConnection,
         url=weaviate_url,
-        api_key=st.secrets.weaviate_key,
         additional_headers = {"X-OpenAI-Api-Key": st.secrets.openai_key})
         client = conn.client()    
         #client = weaviate.Client(url = weaviate_url, auth_client_secret=weaviate.AuthApiKey(api_key=st.secrets.weaviate_key), additional_headers = {"X-OpenAI-Api-Key": st.secrets.openai_key})

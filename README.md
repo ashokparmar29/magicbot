@@ -6,6 +6,6 @@
 
 openai_key = "<your-openai-key>"
 
-weaviate_key = "<your-weavaite-key>"
+weaviate_key = "<your-weavaite-key>" # not required for our weaviate container
 
 weaviate_url = "<url-weaviate>"
