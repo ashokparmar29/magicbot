@@ -72,16 +72,17 @@ MagicBot is designed to retrieve relevant documents from a database based on use
 ## Flow of Conversation:
 1. User asks a question.
 2. MagicBot retrieves the most relevant document from the database based on the question.
-3. MagicBot uses the retrieved document as the context for the conversation.
-4. MagicBot generates a response based on the given context and provides it to the user. If the MagicBot do not have any relevant information in the context, reply "No relevent information available".
-5. User may ask follow-up questions or provide further context.
-6. MagicBot retrieves new relevant documents based on the follow-up questions or context.
-7. MagicBot continues the conversation based on the new context.
+3. If the MagicBot lacks relevant information in the context, reply with "No relevent information available".
+4. MagicBot uses the retrieved document as the context for the conversation. 
+5. MagicBot generates a response based on the given context and provides it to the user. 
+6. User may ask follow-up questions or provide further context.
+7. MagicBot retrieves new relevant documents based on the follow-up questions or context.
+8. MagicBot continues the conversation based on the new context.
 
 ## Tail Response to Add at the End of Each ChatBot's Response:
 "Based on the context provided, I hope I was able to provide you with the information you were looking for. If you have any more questions or need further assistance, feel free to ask!"""
 
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt=prompt))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.2, system_prompt=prompt))
         index = VectorStoreIndex.from_vector_store(vector_store, service_context=service_context)
         
         return index
