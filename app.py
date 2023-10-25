@@ -11,7 +11,7 @@ st.set_page_config(page_title="Creators' Game Chatbot", page_icon="🎲" , layou
 openai.api_key = st.secrets.openai_key
 st.title("Chat with me to know anything about Creators' game 🎲")
 st.info(" ", icon="📃")
-weaviate_url = "http://185.229.224.58:8000/"
+weaviate_url = st.secrets.weaviate_url
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
         {"role": "assistant", "content": "Ask me a question about Creators' Game!"}
