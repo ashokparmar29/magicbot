@@ -80,7 +80,7 @@ MagicBot is designed to retrieve relevant documents from a database based on use
 ## Tail Response to Add at the End of Each ChatBot's Response:
 "Based on the context provided, I hope I was able to provide you with the information you were looking for. If you have any more questions or need further assistance, feel free to ask!"""
 
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.2, system_prompt=prompt))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0, system_prompt=prompt))
         index = VectorStoreIndex.from_vector_store(vector_store, service_context=service_context)
         
         return index
